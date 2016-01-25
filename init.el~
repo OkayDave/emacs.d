@@ -1,0 +1,125 @@
+;;;; MELPA config
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
+
+;;;; Evil config
+(require 'evil)
+(require 'evil-leader)
+
+(setq evil-leader/in-all-states 1)
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+
+(evil-mode 1)
+
+;; set cursor colour on mode
+(setq evil-emacs-state-cursor '("#CC6666" box))
+(setq evil-normal-state-cursor '("#66CC66" box))
+(setq evil-visual-state-cursor '("#CC6600" box))
+(setq evil-insert-state-cursor '("#CC6666" bar))
+(setq evil-replace-state-cursor '("#CC6666" bar))
+(setq evil-operator-state-cursor '("#CC6666" hollow))
+
+;;;; Project files
+(require 'projectile)
+(require 'helm-config)
+(require 'helm-misc)
+(require 'helm-projectile)
+(require 'helm-locate)
+
+(projectile-global-mode)
+
+(setq helm-quick-update t)
+(setq helm-bookmark-show-location t)
+(setq helm-buffers-fuzzy-matching t)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+(defun helm-my-buffers ()
+  (interactive)
+  (let (helm-ff-transformer-show-only-basename nil))
+  (helm-other-buffer '(helm-c-source-buffers-list
+		       helm-c-source-elscreen
+		       helm-c-source-projectile-files-list
+		       helm-c-source-ctags
+		       helm-c-source-recentf
+		       helm-c-source-locate)
+		     "*helm-my-buffers*"))
+
+
+
+
+
+;;;; Colours
+(load-theme 'flatland t)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+
+;;;; UI & Behaviour config
+
+(require 'powerline)
+
+(global-linum-mode t)
+(column-number-mode t)
+
+(tool-bar-mode -1)      ;; disable tool bar
+(scroll-bar-mode -1)
+(set-fringe-mode 1)
+
+(setq-default left-fringe-width 10)
+(setq-default right-fringe-width 10)
+
+(setq scroll-margin 5
+      scroll-conservatively 9999
+      scroll-step 1)
+
+;; (powerline-evil-vim-color-theme)
+(powerline-center-evil-theme)
+(display-time-mode t)
+
+(setq linum-format "%4d ")
+
+(global-git-gutter+-mode)
+
+
+;; esc quits
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+
+
+(setq-default tab-width 2)
+(setq-default tabs-mode nil)
+
+(setq make-backup-files nil)
+
+
+;;;; completeion
+
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-enable-flx-matching 1)
+(setq ido-use-faces nil)
+
+
+;;;; Leader bindings
+(evil-leader/set-key "[ ]" 'eval-buffer
+                     "p f" 'helm-projectile)
+

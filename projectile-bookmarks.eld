@@ -1,0 +1,1 @@
+("~/code/rails/flexmr/" "~/.emacs.d/")
