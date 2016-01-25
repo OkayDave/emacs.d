@@ -105,6 +105,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq-default tabs-mode nil)
 
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (global-hl-line-mode)
 
