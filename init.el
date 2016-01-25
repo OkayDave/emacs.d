@@ -73,7 +73,7 @@
 
 (setq visible-bell t)
 (setq-default left-fringe-width 10)
-(setq-default right-fringe-width 10)
+(setq-default right-fringe-width 0)
 
 (setq scroll-margin 5
       scroll-conservatively 9999
@@ -82,6 +82,15 @@
 (powerline-center-evil-theme)
 
 (setq linum-format "%4d ")
+
+(defun hide-fringe ()
+  (interactive)
+	(setq fringe-colour (face-background 'default))
+	(custom-set-faces
+	 `(fringe ((t (:background ,fringe-colour)))))
+	)
+
+(add-hook 'after-init-hook #'hide-fringe)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -94,7 +103,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (if (and delete-selection-mode transient-mark-mode mark-active)
       (setq deactivate-mark  t)
     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
-    (abort-recursive-edit)))
+    (abort-recursive-edit))
+	)
+
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
 (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
