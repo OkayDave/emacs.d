@@ -37,6 +37,8 @@
 (setq helm-quick-update t)
 (setq helm-bookmark-show-location t)
 (setq helm-buffers-fuzzy-matching t)
+(setq helm-M-x-fuzzy-match t)
+(setq helm-autoresize-mode t)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 
@@ -60,6 +62,7 @@
 ;;;; UI & Behaviour config
 
 (require 'powerline)
+(require 'paren)
 
 (global-linum-mode t)
 (column-number-mode t)
@@ -109,6 +112,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (global-hl-line-mode)
 
+(show-paren-mode 1)
+(set-face-background 'show-paren-match "#CCCC66")
+(set-face-foreground 'show-paren-match "#000000")
 
 ;;;; completeion
 
