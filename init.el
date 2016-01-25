@@ -71,6 +71,7 @@
 (scroll-bar-mode -1)
 (set-fringe-mode 1)
 
+(setq visible-bell t)
 (setq-default left-fringe-width 10)
 (setq-default right-fringe-width 10)
 
@@ -115,6 +116,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (show-paren-mode 1)
 (set-face-background 'show-paren-match "#CCCC66")
 (set-face-foreground 'show-paren-match "#000000")
+(set-face-attribute  'show-paren-match nil :weight 'ultra-bold)
 
 ;;;; completeion
 
