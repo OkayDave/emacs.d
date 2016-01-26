@@ -18,9 +18,7 @@
 	fringe-helper
 	git-commit
 	git-gutter
-	git-gutter+
 	git-gutter-fringe
-	git-gutter-fringe+
 	goto-chg
 	helm
 	helm-core

@@ -162,11 +162,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
 
-;;;; git-gutter
-(require 'git-gutter-fringe+)
-(set-face-foreground 'git-gutter+-modified "#CC6600")
-(set-face-foreground 'git-gutter+-added "#66CC66")
-(set-face-foreground 'git-gutter+-deleted "#CC6666")
+;;;; git-gutter-fringe
+(require 'git-gutter-fringe)
+(set-face-foreground 'git-gutter-fr:added "#66CC66")
+(set-face-foreground 'git-gutter-fr:deleted "#CC6666")
+(set-face-foreground 'git-gutter-fr:modified "#6666CC")
+(git-gutter)
 
 ;;;; smartparens
 (require 'smartparens-config)
@@ -212,7 +213,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"p f" 'helm-projectile
 	"p s" 'helm-projectile-grep
 	"p t" 'open-project-terms
-  "g g" 'git-gutter+-toggle-fringe
+  "g g" 'git-gutter:toggle
 	"t n" 'rainbow-delimiters-mode
 	"t s" 'smartparens-mode
 	"t c" 'column-highlight-mode
