@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/code/rails/flexmr/")
+("~/code/rails/flexmr/" "~/.emacs.d/")

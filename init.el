@@ -176,6 +176,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;;;; rainbow-mode
 (rainbow-mode)
+(add-hook 'prog-mode-hook 'rainbow-mode)
 
 ;;;; multiterm
 (require 'multi-term)
