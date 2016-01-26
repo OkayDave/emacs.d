@@ -1,2 +1,4 @@
 auto-save-list/*
-ido.last
+/ido.last
+/projectile-bookmarks.eld
+/projectile.cache
