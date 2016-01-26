@@ -208,9 +208,25 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;;; dimensions
 (when window-system (set-frame-size (selected-frame) 275 120))
 
+;;; lisp things
+
+(defun eval-break-print ()
+  (interactive)
+	(forward-char)
+	(eval-print-last-sexp)
+	)
+
+(defun eval-last-sexp-shunt ()
+  (interactive)
+	(forward-char)
+	(eval-last-sexp)
+	)
 
 ;;;; Leader bindings
-(evil-leader/set-key "[ ]" 'eval-buffer
+(evil-leader/set-key
+	"[ ]" 'eval-buffer
+	"[ j" 'eval-break-print
+	"[ '" 'eval-last-sexp
 	"p f" 'helm-projectile
 	"p s" 'helm-projectile-grep
 	"p t" 'open-project-terms
