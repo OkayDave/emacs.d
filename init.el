@@ -1,7 +1,7 @@
 ;;;; MELPA config
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+(setq auto-install (expand-file-name "auto-install.el" user-emacs-directory))
+(load auto-install)
 
 ;;;; Evil config
 (require 'evil)
@@ -173,6 +173,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (add-hook 'prog-mode-hook #'smartparens-mode)
 (smartparens-mode)
 
+;;;; rainbow-mode
+(rainbow-mode)
 
 ;;;; multiterm
 (require 'multi-term)
@@ -216,6 +218,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"t c" 'column-highlight-mode
 	"t r" 'global-hl-line-mode
 	"t l" 'linum-relative-toggle
+	"t q" 'rainbow-mode
 	"c i" 'evilnc-comment-or-uncomment-lines
 	"<RET>" 'multi-term
 	)

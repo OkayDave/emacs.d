@@ -17,7 +17,7 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/dave/.emacs.d/" (22180 4669 510925 473000) ".projectile" "../" "projectile.cache" "init.el~" "init.el" "ido.last" "auto-save-list/" "elpa/" "projectile-bookmarks.eld" "./")
+ ("/home/dave/.emacs.d/" (22182 45294 691359 468000) "../" "projectile.cache" ".gitignore" "init.el" ".git/" "ido.last" "auto-save-list/" "elpa/" "projectile-bookmarks.eld" "./")
 
  ("/home/dave/Desktop/" (22179 52032 858963 425000) "../" "steam.desktop" "./")
 
