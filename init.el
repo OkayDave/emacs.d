@@ -208,7 +208,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;;; dimensions
 (when window-system (set-frame-size (selected-frame) 275 120))
 
-;;; lisp things
+;;; emacs/lisp things
 
 (defun eval-break-print ()
   (interactive)
@@ -222,23 +222,41 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	(eval-last-sexp)
 	)
 
+(defun open-scratch()
+	(interactive)
+	(evil-window-vsplit)
+	(evil-window-right 1)
+	(switch-to-buffer (get-buffer-create "*scratch*"))
+	(lisp-interaction-mode)
+	)
+
+
 ;;;; Leader bindings
 (evil-leader/set-key
+  ;; emacs/lisp
 	"[ ]" 'eval-buffer
 	"[ j" 'eval-break-print
 	"[ '" 'eval-last-sexp
+	"[ s" 'open-scratch
+	
+	;; projectile
 	"p f" 'helm-projectile
 	"p s" 'helm-projectile-grep
 	"p t" 'open-project-terms
   "g g" 'git-gutter:toggle
+
+	;; toggles
 	"t n" 'rainbow-delimiters-mode
 	"t s" 'smartparens-mode
 	"t c" 'column-highlight-mode
 	"t r" 'global-hl-line-mode
 	"t l" 'linum-relative-toggle
 	"t q" 'rainbow-mode
+
+	;; features
 	"c i" 'evilnc-comment-or-uncomment-lines
 	"<RET>" 'multi-term
+
 	)
 
 (evil-leader/set-key "e e" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
