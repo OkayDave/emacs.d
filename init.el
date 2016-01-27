@@ -230,6 +230,19 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	(lisp-interaction-mode)
 	)
 
+;;;; org-mode
+(require 'org)
+(global-font-lock-mode 1)
+
+
+(defun open-org()
+	(interactive)
+	(evil-window-vsplit)
+  (evil-window-right 1)
+	(shell-command "touch ~/agenda.org")
+	(find-file "~/agenda.org")
+	
+	)
 
 ;;;; Leader bindings
 (evil-leader/set-key
@@ -256,6 +269,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	;; features
 	"c i" 'evilnc-comment-or-uncomment-lines
 	"<RET>" 'multi-term
+
+	;; org-mode
+	"o a" 'org-agenda
+	"o l" 'org-store-link
+	"o o" 'open-org
 
 	)
 

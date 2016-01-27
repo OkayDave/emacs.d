@@ -25,6 +25,7 @@
 	helm-projectile
 	linum-relative
 	multi-term
+	org
 	pkg-info
 	powerline
 	powerline-evil
@@ -45,7 +46,9 @@
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-												 ("melpa" . "https://melpa.org/packages/")))
+												 ("melpa" . "https://melpa.org/packages/")
+			                   ("org" . "http://orgmode.org/elpa/")))
+
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
