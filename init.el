@@ -260,3 +260,4 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	)
 
 (evil-leader/set-key "e e" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+
