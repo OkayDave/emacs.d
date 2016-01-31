@@ -158,6 +158,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js.jsx\\'" . web-mode))
 (setq web-mode-enable-auto-pairing t)
 (setq web-mode-enable-css-colorization nil)
 (setq web-mode-enable-current-element-highlight t)
