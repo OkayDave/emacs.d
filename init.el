@@ -211,8 +211,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;;; ruby 
 ;(require 'ruby-block)
 (require 'ruby-test-mode)
+(require 'rvm)
 
 ;(ruby-block-mode t)
+(rvm-use-default)
+
+(add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
 
 ;;;; dimensions
 (when window-system (set-frame-size (selected-frame) 275 120))
@@ -303,7 +307,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 
 	;; ruby
-	"r t b" 'ruby-test-run
+	"r t f" 'ruby-test-run
 	"r t p" 'ruby-test-run-at-point
 	"r t t" 'ruby-test-toggle-implementation-and-specification
 

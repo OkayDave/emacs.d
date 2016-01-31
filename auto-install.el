@@ -36,6 +36,7 @@
 	ruby-block
 	ruby-tools
 	ruby-test-mode
+  rvm
 	smartparens
 	sublimity
 	undo-tree
