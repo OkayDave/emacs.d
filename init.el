@@ -118,6 +118,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (setq-default tab-width 2)
 (setq-default tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -158,9 +159,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (setq web-mode-enable-auto-pairing t)
-(setq web-mode-enable-css-colorization t)
+(setq web-mode-enable-css-colorization nil)
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
+(setq web-mode-markup-index-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+
+(add-hook 'web-mode-hook (lambda () (whitespace-mode -1)))
+
 
 ;;;; git-gutter-fringe
 (require 'git-gutter-fringe)
@@ -173,6 +180,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'smartparens-config)
 (add-hook 'prog-mode-hook #'smartparens-mode)
 (smartparens-mode)
+(sp-local-pair 'web-mode "<" ">" :actions nil)
 
 ;;;; rainbow-mode
 (rainbow-mode)
@@ -201,10 +209,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	)
 
 ;;;; ruby 
-(require 'ruby-block)
+;(require 'ruby-block)
 (require 'ruby-test-mode)
 
-(ruby-block-mode t)
+;(ruby-block-mode t)
 
 ;;;; dimensions
 (when window-system (set-frame-size (selected-frame) 275 120))
