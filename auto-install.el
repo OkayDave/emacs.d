@@ -12,7 +12,6 @@
 	evil-nerd-commenter
 	evil-smartparens
 	evil-surround
-	exec-path-from-shell
 	flatland-theme
 	flx
 	flx-ido

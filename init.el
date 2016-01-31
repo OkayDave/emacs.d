@@ -218,8 +218,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (when window-system (set-frame-size (selected-frame) 275 120))
 
 ;;; emacs/lisp things
-(require 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
 
 (defun eval-break-print ()
   (interactive)
