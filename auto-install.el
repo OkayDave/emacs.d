@@ -13,6 +13,7 @@
 	evil-smartparens
 	evil-surround
 	flatland-theme
+  flycheck
 	flx
 	flx-ido
 	fringe-helper

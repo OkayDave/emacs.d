@@ -218,11 +218,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
 
+
 ;;;; yaml
 (require 'yaml-mode)
 
 (add-hook 'yaml-mode-hook
-  (labmda ()
+  (lambda ()
     (evil-local-mode 1)
     (indent-guide-mode 1)
     ))
@@ -268,6 +269,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	
 	)
 
+;;;; flycheck
+(require 'flycheck)
+
+(setq flycheck-indication-mode 'right-fringe)
+(global-flycheck-mode)
 
 ;;;; windows
 
@@ -327,4 +333,3 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	)
 
 (evil-leader/set-key "e e" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
-
