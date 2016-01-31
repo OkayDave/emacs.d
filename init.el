@@ -200,8 +200,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (evil-window-left 1)
 	)
 
-;;;; ruby mode
+;;;; ruby 
 (require 'ruby-block)
+(require 'ruby-test-mode)
 
 (ruby-block-mode t)
 
@@ -209,6 +210,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (when window-system (set-frame-size (selected-frame) 275 120))
 
 ;;; emacs/lisp things
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 (defun eval-break-print ()
   (interactive)
@@ -274,6 +277,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"o a" 'org-agenda
 	"o l" 'org-store-link
 	"o o" 'open-org
+
+
+	;; ruby
+	"r t b" 'ruby-test-run
+	"r t p" 'ruby-test-run-at-point
+	"r t t" 'ruby-test-toggle-implementation-and-specification
 
 	)
 

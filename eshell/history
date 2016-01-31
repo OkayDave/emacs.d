@@ -1,0 +1,9 @@
+whoami
+echo $0
+echo $SHELL
+ruby -v
+rvm
+ruby -v
+bundle
+ls ~/.rvm/bin
+exit

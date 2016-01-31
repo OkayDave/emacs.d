@@ -12,6 +12,7 @@
 	evil-nerd-commenter
 	evil-smartparens
 	evil-surround
+	exec-path-from-shell
 	flatland-theme
 	flx
 	flx-ido
@@ -35,6 +36,7 @@
 	relative-line-numbers
 	ruby-block
 	ruby-tools
+	ruby-test-mode
 	smartparens
 	sublimity
 	undo-tree
