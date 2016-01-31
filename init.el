@@ -306,7 +306,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   ;; windows
   "w j" 'my-window-open-down
   "w l" 'my-window-open-right
-
+  "w k" 'evil-window-delete
+  "w >" 'evil-window-rotate-upwards
+  "w <" 'evil-window-rotate-downwards
 
 	;; ruby
 	"r t f" 'ruby-test-run
