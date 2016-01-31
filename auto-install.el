@@ -42,7 +42,10 @@
 	undo-tree
 	vline
 	web-mode
-	with-editor))
+	with-editor
+  yaml-mode
+  ))
+
 
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")

@@ -220,6 +220,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
 
+
+;;;; yaml
+(require 'yaml-mode)
+
+(add-hook 'yaml-mode-hook
+  (labmda ()
+    (evil-local-mode 1)
+    (indent-guide-mode 1)
+    ))
+
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  
 ;;;; dimensions
 (when window-system (set-frame-size (selected-frame) 275 120))
 
