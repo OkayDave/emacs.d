@@ -255,6 +255,19 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	
 	)
 
+
+;;;; windows
+
+(defun my-window-open-right ()
+  (interactive)
+  (evil-window-vsplit)
+  (evil-window-right 1))
+
+(defun my-window-open-down ()
+  (interactive)
+  (evil-window-split)
+  (evil-window-down 1))
+
 ;;;; Leader bindings
 (evil-leader/set-key
   ;; emacs/lisp
@@ -285,6 +298,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"o a" 'org-agenda
 	"o l" 'org-store-link
 	"o o" 'open-org
+
+  ;; windows
+  "w j" 'my-window-open-down
+  "w l" 'my-window-open-right
 
 
 	;; ruby
