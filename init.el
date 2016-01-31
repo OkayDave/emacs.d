@@ -211,15 +211,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	)
 
 ;;;; ruby 
-;(require 'ruby-block)
 (require 'ruby-test-mode)
 (require 'rvm)
 
-;(ruby-block-mode t)
 (rvm-use-default)
 
 (add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
-
 
 ;;;; yaml
 (require 'yaml-mode)
