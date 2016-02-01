@@ -24,6 +24,7 @@
 	helm
 	helm-core
 	helm-projectile
+  indent-guide
 	linum-relative
 	multi-term
 	org

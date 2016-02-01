@@ -57,12 +57,14 @@
 ;;;; Colours
 (load-theme 'flatland t)
 (rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 
 ;;;; UI & Behaviour config
 
 (require 'powerline)
 (require 'paren)
+(require 'indent-guide)
 
 (global-linum-mode t)
 (column-number-mode t)
@@ -82,6 +84,9 @@
 (powerline-center-evil-theme)
 
 (setq linum-format "%4d ")
+
+(indent-guide-global-mode)
+(setq indent-guide-recursive t)
 
 (defun hide-fringe ()
   (interactive)
@@ -164,7 +169,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq web-mode-enable-css-colorization nil)
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
-(setq web-mode-markup-index-offset 2)
+(setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 
@@ -217,7 +222,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (rvm-use-default)
 
 (add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
-
 
 ;;;; yaml
 (require 'yaml-mode)
@@ -287,6 +291,27 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (evil-window-split)
   (evil-window-down 1))
 
+
+(defun my-window-left ()
+  (interactive)
+  (evil-window-left 1)
+  )
+
+(defun my-window-right ()
+  (interactive)
+   (evil-window-right 1)
+   )
+
+(defun my-window-up ()
+  (interactive)
+   (evil-window-up 1)
+   )
+
+(defun my-window-down ()
+  (interactive)
+   (evil-window-down 1)
+   )
+
 ;;;; Leader bindings
 (evil-leader/set-key
   ;; emacs/lisp
@@ -324,6 +349,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "w k" 'evil-window-delete
   "w >" 'evil-window-rotate-upwards
   "w <" 'evil-window-rotate-downwards
+  "<left>" 'my-window-left
+  "<right>" 'my-window-right
+  "<up>"    'my-window-up
+  "<down>"  'my-window-down
 
 	;; ruby
 	"r t f" 'ruby-test-run
@@ -333,3 +362,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	)
 
 (evil-leader/set-key "e e" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+
+(provide 'init)
+;;; init.el ends here
