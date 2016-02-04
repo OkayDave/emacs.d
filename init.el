@@ -57,7 +57,6 @@
 ;;;; Colours
 (load-theme 'flatland t)
 (rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 
 ;;;; UI & Behaviour config
@@ -87,6 +86,7 @@
 
 (indent-guide-global-mode)
 (setq indent-guide-recursive t)
+(global-aggressive-indent-mode 1)
 
 (defun hide-fringe ()
   (interactive)
@@ -169,9 +169,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq web-mode-enable-css-colorization nil)
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
+(setq web-mode-markup-indent-offset 0)
+(setq web-mode-css-indent-offset 0)
+(setq web-mode-code-indent-offset 0)
 
 (add-hook 'web-mode-hook (lambda () (whitespace-mode -1)))
 
@@ -270,7 +270,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (evil-window-right 1)
 	(shell-command "touch ~/agenda.org")
 	(find-file "~/agenda.org")
-	
 	)
 
 ;;;; flycheck
