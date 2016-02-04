@@ -308,8 +308,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (defun my-window-down ()
   (interactive)
-   (evil-window-down 1)
-   )
+  (evil-window-down 1)
+  )
+
+
+;;;; diminish
+(diminish 'projectile-mode)
+(diminish 'rainbow-mode)
+(diminish 'smartparens-mode)
+(diminish 'undo-tree-mode)
+(diminish 'flycheck-mode)
+(diminish 'indent-guide-mode)
+
 
 ;;;; Leader bindings
 (evil-leader/set-key

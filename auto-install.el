@@ -4,6 +4,7 @@
                      async
                      col-highlight
                      dash
+                     diminish
                      dtrt-indent
                      epl
                      evil
