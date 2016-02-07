@@ -65,8 +65,9 @@
 (require 'paren)
 (require 'indent-guide)
 
-(global-linum-mode t)
 (column-number-mode t)
+
+(add-hook 'prog-mode-hook 'linum-mode)
 
 (tool-bar-mode -1)      ;; disable tool bar
 (scroll-bar-mode -1)
@@ -86,7 +87,6 @@
 
 (indent-guide-global-mode)
 (setq indent-guide-recursive t)
-(global-aggressive-indent-mode 1)
 
 (defun hide-fringe ()
   (interactive)
@@ -208,12 +208,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	(evil-window-split)
 	(evil-window-down 1)
 	(multi-term)
-	(evil-window-split)
-	(evil-window-down 1)
-	(multi-term)
 	(balance-windows)
   (evil-window-left 1)
 	)
+
+(add-hook 'term-mode (lambda ()
+                       (interactive)
+                       (message "term mode term mode term mode")
+                       (global-linum-mode 0)
+                       ))
 
 ;;;; ruby 
 (require 'ruby-test-mode)
@@ -333,7 +336,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"p f" 'helm-projectile
 	"p s" 'helm-projectile-grep
 	"p t" 'open-project-terms
-  "g g" 'git-gutter:toggle
 
 	;; toggles
 	"t n" 'rainbow-delimiters-mode
@@ -342,6 +344,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"t r" 'global-hl-line-mode
 	"t l" 'linum-relative-toggle
 	"t q" 'rainbow-mode
+  "t g" 'git-gutter:toggle
 
 	;; features
 	"c i" 'evilnc-comment-or-uncomment-lines
