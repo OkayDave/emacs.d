@@ -225,13 +225,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (rvm-use-default)
 
 (add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
-(add-hook 'ruby-mode-hook 'robe-mode)
+; (add-hook 'ruby-mode-hook 'robe-mode)
 
-(eval-after-load 'company
-  '(push 'company-robe company-backends))
+;(eval-after-load 'company
+;  '(push 'company-robe company-backends))
 
-(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  (rvm-activate-corresponding-ruby))
+ (add-hook 'inf-ruby-mode-hook (lambda () (require 'inf-ruby-company)))
 
 ;;;; yaml
 (require 'yaml-mode)
@@ -325,7 +324,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;;; company-mode
 
 (add-hook 'after-init-hook 'global-company-mode)
-
+(setq company-idle-delay 0.1)
+(setq company-minimum-prefix-length 2)
 
 ;;;; diminish
 (diminish 'projectile-mode)
