@@ -1,6 +1,5 @@
 ;;; From: http://stackoverflow.com/a/10093312
 (setq package-list '(
-                     aggressive-indent
                      async
                      col-highlight
                      dash
