@@ -2,6 +2,7 @@
 (setq package-list '(
                      async
                      col-highlight
+                     company
                      dash
                      diminish
                      dtrt-indent

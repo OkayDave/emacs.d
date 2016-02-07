@@ -315,6 +315,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   )
 
 
+;;;; company-mode
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+
 ;;;; diminish
 (diminish 'projectile-mode)
 (diminish 'rainbow-mode)
