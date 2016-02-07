@@ -278,7 +278,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;;; flycheck
 (require 'flycheck)
 
-(setq flycheck-indication-mode 'right-fringe)
+(setq flycheck-indication-mode 'left-fringe)
 (global-flycheck-mode)
 
 ;;;; windows
