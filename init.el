@@ -322,6 +322,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (diminish 'undo-tree-mode)
 (diminish 'flycheck-mode)
 (diminish 'indent-guide-mode)
+(diminish 'git-gutter-mode)
 
 
 ;;;; Leader bindings
