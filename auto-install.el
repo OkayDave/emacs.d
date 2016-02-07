@@ -37,6 +37,7 @@
                      rainbow-delimiters
                      rainbow-mode
                      relative-line-numbers
+                     robe
                      ruby-tools
                      ruby-test-mode
                      rvm

@@ -225,6 +225,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (rvm-use-default)
 
 (add-hook 'ruby-mode 'rvm-activate-corresponding-ruby)
+(add-hook 'ruby-mode-hook 'robe-mode)
+
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
 
 ;;;; yaml
 (require 'yaml-mode)
