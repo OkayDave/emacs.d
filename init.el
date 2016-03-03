@@ -244,7 +244,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
   
 ;;;; dimensions
-(when window-system (set-frame-size (selected-frame) 275 120))
+(when window-system (set-frame-size (selected-frame) 275 108))
 
 ;;; emacs/lisp things
 
