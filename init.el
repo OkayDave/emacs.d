@@ -232,6 +232,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
  (add-hook 'inf-ruby-mode-hook (lambda () (require 'inf-ruby-company)))
 
+;;;; elixir
+
 ;;;; yaml
 (require 'yaml-mode)
 
@@ -383,6 +385,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"r t f" 'ruby-test-run
 	"r t p" 'ruby-test-run-at-point
 	"r t t" 'ruby-test-toggle-implementation-and-specification
+
+  ;; elixir
+
+  "e x"   'alchemist-mix
+  "e c" 'alchemist-mix-compile
+  "e r" 'alchemist-mix-run
+  "e t" 'alchemist-mix-test
+  "e f" 'alchemist-mix-test-file
+  "e s" 'alchemist-test-toggle-test-report-display
 
 	)
 

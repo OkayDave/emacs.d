@@ -1,5 +1,6 @@
 ;;; From: http://stackoverflow.com/a/10093312
 (setq package-list '(
+                     alchemist
                      async
                      col-highlight
                      company
