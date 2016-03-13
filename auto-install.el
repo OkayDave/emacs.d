@@ -31,6 +31,7 @@
                      indent-guide
                      linum-relative
                      multi-term
+                     neotree
                      org
                      pkg-info
                      powerline

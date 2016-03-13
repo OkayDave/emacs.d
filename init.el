@@ -329,6 +329,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 2)
 
+;;;; neotree
+(setq neo-smart-open t)
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
 ;;;; diminish
 (diminish 'projectile-mode)
 (diminish 'rainbow-mode)
@@ -347,10 +351,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"[ '" 'eval-last-sexp
 	"[ s" 'open-scratch
 	
-	;; projectile
+	;; project
 	"p f" 'helm-projectile
 	"p s" 'helm-projectile-grep
 	"p t" 'open-project-terms
+  "p q" 'helm-projectile-switch-project
+  "p o" 'neotree-toggle
 
 	;; toggles
 	"t n" 'rainbow-delimiters-mode
