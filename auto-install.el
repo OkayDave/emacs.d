@@ -24,6 +24,7 @@
                      git-gutter
                      git-gutter-fringe
                      goto-chg
+                     haml-mode
                      helm
                      helm-core
                      helm-projectile
