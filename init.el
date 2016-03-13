@@ -333,6 +333,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq neo-smart-open t)
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "q")   'neotree-hide)
+            (define-key evil-normal-state-local-map (kbd "r")   'neotree-refresh)           
+          ))
+
 ;;;; diminish
 (diminish 'projectile-mode)
 (diminish 'rainbow-mode)
