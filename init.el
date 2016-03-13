@@ -380,8 +380,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "w j" 'my-window-open-down
   "w l" 'my-window-open-right
   "w k" 'evil-window-delete
-  "w >" 'evil-window-rotate-upwards
-  "w <" 'evil-window-rotate-downwards
+  "w <" 'evil-window-rotate-upwards
+  "w >" 'evil-window-rotate-downwards
+  "w =" 'balance-windows
   "<left>" 'my-window-left
   "<right>" 'my-window-right
   "<up>"    'my-window-up
