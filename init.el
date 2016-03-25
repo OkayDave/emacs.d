@@ -72,6 +72,7 @@
 (tool-bar-mode -1)      ;; disable tool bar
 (scroll-bar-mode -1)
 (set-fringe-mode 1)
+(menu-bar-mode -1)
 
 (setq visible-bell t)
 (setq-default left-fringe-width 10)
@@ -134,6 +135,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (set-face-background 'show-paren-match "#CCCC66")
 (set-face-foreground 'show-paren-match "#000000")
 (set-face-attribute  'show-paren-match nil :weight 'ultra-bold)
+
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(setq-default evil-cross-lines t)
+(setq-default truncate-lines nil)
 
 ;;;; completeion
 
@@ -330,8 +338,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq company-minimum-prefix-length 2)
 
 ;;;; neotree
-(setq neo-smart-open t)
-(setq projectile-switch-project-action 'neotree-projectile-action)
 
 (add-hook 'neotree-mode-hook
           (lambda ()
@@ -373,6 +379,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"t l" 'linum-relative-toggle
 	"t q" 'rainbow-mode
   "t g" 'git-gutter:toggle
+  "t m" 'toggle-menu-bar-mode-from-frame
+  "t w" 'global-visual-line-mode
 
 	;; features
 	"c i" 'evilnc-comment-or-uncomment-lines
