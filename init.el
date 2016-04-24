@@ -62,8 +62,8 @@
 ;;;; UI & Behaviour config
 
 (require 'powerline)
-(require 'paren)
-(require 'indent-guide)
+;(require 'paren)
+;(require 'indent-guide)
 
 (column-number-mode t)
 
@@ -145,7 +145,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;;;; completeion
 
-(require 'flx-ido)
+;(require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
@@ -159,6 +159,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(browse-url-browser-function (quote browse-url-firefox))
  '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 (custom-set-faces
@@ -166,10 +167,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(fringe ((t (:background "#26292c")))))
 
 ;;;; web-mode
-(require 'web-mode)
+;(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js.jsx\\'" . web-mode))
@@ -354,6 +355,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (diminish 'flycheck-mode)
 (diminish 'indent-guide-mode)
 (diminish 'git-gutter-mode)
+(diminish 'company-mode)
+(diminish 'ruby-test-mode)
 
 
 ;;;; Leader bindings
@@ -370,6 +373,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	"p t" 'open-project-terms
   "p q" 'helm-projectile-switch-project
   "p o" 'neotree-toggle
+  "p b" 'helm-buffers-list
 
 	;; toggles
 	"t n" 'rainbow-delimiters-mode

@@ -2,6 +2,7 @@
 (setq package-list '(
                      alchemist
                      async
+                     bundler
                      col-highlight
                      company
                      dash
@@ -30,6 +31,7 @@
                      helm-projectile
                      indent-guide
                      linum-relative
+                     markdown-preview-mode
                      multi-term
                      neotree
                      org
@@ -41,6 +43,7 @@
                      rainbow-mode
                      relative-line-numbers
                      robe
+                     rspec-mode
                      ruby-tools
                      ruby-test-mode
                      rvm
